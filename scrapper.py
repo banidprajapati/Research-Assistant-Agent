@@ -60,7 +60,7 @@ def fetch_top_arxiv_papers(query, max_results=10):
     return papers
 
 
-# ----------- Step 5: Save Research Session -----------
+# ----------- Step 4: Save Research Session -----------
 def save_research_session(user_query, rewritten_query, papers):
     session = {
         "original_query": user_query,
@@ -69,10 +69,10 @@ def save_research_session(user_query, rewritten_query, papers):
     }
     with open(f"Output/{user_query}.json", "w", encoding="utf-8") as f:
         json.dump(session, f, indent=2)
-    print(f"Research session saved to Output/{user_query}.json")
+    print(f"Research session saved to Outout/{user_query}.json")
 
 
-# ----------- Step 6: Usage -----------
+# ----------- Step 5: Usage -----------
 user_query = "Nepal"
 rewritten_query = rewrite_query(user_query)
 rewritten_query = "+".join(
@@ -83,3 +83,4 @@ papers = fetch_top_arxiv_papers(rewritten_query)
 
 # Save the research session
 save_research_session(user_query, rewritten_query, papers)
+
