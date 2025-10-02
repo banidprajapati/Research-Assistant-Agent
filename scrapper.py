@@ -83,4 +83,3 @@ papers = fetch_top_arxiv_papers(rewritten_query)
 
 # Save the research session
 save_research_session(user_query, rewritten_query, papers)
-
